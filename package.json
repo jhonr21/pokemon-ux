@@ -22,7 +22,7 @@
     "@bbva-web-components/bbva-form-text": "^3.15.0",
     "@bbva-web-components/bbva-foundations-scrollbar": "^1.0.7",
     "@bbva-web-components/bbva-foundations-styles": "^2.0.0",
-    "@pokemon-ux": "^git+ssh://git@globaldevtools.bbva.com:7999/~darcinmilena.becerra.contractor.cidentity/jhon-rangel.git",
+    "@pokemon-ux": "^git+ssh://git@globaldevtools.bbva.com:7999/~darcinmilena.becerra.contractor.cidentity/jhon-rangel.gitgit push -u origin HEAD:proyecto pokemon",
     "lit-element": "^2.0.0",
     "lit-html": "^1.0.0"
   },
