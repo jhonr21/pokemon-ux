@@ -1,0 +1,153 @@
+<dom-module id="pokemon-ux-styles"><template><style>
+:host {
+  display: block;
+  box-sizing: border-box;
+}
+
+:host([hidden]), [hidden] {
+  display: none !important;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.pokemon-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+
+.titulo {
+  text-align: center;
+}
+
+.pokemon-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  background-color: #f9f9f9;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pokemon-card:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.pokemon-image {
+  width: 100px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.titulo-principal {
+  text-align: center;
+  margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+  .titulo-principal {
+    font-size: 2em;
+  }
+}
+@media (min-width: 601px) and (max-width: 960px) {
+  .titulo-principal {
+    font-size: 2.5em;
+  }
+}
+@media (min-width: 961px) {
+  .titulo-principal {
+    font-size: 3em;
+  }
+}
+.titulo-secundario {
+  text-align: center;
+  margin: 5px 0;
+  color: #555;
+}
+
+@media (max-width: 600px) {
+  .titulo-secundario {
+    font-size: 1.5em;
+  }
+}
+@media (min-width: 601px) and (max-width: 960px) {
+  .titulo-secundario {
+    font-size: 1.8em;
+  }
+}
+@media (min-width: 961px) {
+  .titulo-secundario {
+    font-size: 2.2em;
+  }
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pagination span {
+  font-size: 16px;
+  color: #333;
+  font-weight: bold;
+}
+
+bbva-button-default {
+  --bbva-button-default-bg-color: #007bff;
+  --bbva-button-default-bg-color-hover: #0056b3;
+  --bbva-button-default-bg-color-focus: #004494;
+  --bbva-button-default-bg-color-disabled: #ccc;
+  --bbva-button-default-text-color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+bbva-button-default[disabled] {
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .pagination {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .pagination span {
+    font-size: 14px;
+  }
+
+  bbva-button-default {
+    padding: 8px 15px;
+    font-size: 14px;
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .pokemon-container {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 601px) and (max-width: 960px) {
+  .pokemon-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 961px) {
+  .pokemon-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+</style></template></dom-module>
