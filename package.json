@@ -23,6 +23,7 @@
     "@bbva-web-components/bbva-form-text": "^3.15.0",
     "@bbva-web-components/bbva-foundations-scrollbar": "^1.0.7",
     "@bbva-web-components/bbva-foundations-styles": "^2.0.0",
+    "@bbva-web-components/bbva-core-heading": "^1.1.1",
     "@pokedex-evolucion/pokemon-ux-evoluciones": "git+https://github.com/jhonr21/pokemon-ux-evoluciones.git#pokemon",
     "@pokedex/pokemon-dm": "git+https://github.com/jhonr21/pokemon-dm.git#pokemon",
     "lit-element": "^2.0.0",

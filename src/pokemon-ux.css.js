@@ -11,6 +11,12 @@ export default css`
   padding: 20px;
 }
 
+.pokemon-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .titulo-principal {
   font-size: 2.5rem;
   color: #ffcc00;
@@ -23,13 +29,6 @@ export default css`
   color: #fff;
   text-align: center;
   margin-bottom: 15px;
-}
-
-.pokemon-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 20px 0;
 }
 
 .pokemon-card {
@@ -71,14 +70,58 @@ export default css`
 
 .tipo {
   font-weight: bold;
-  color: #ff6699;
+  color: #004481;
   margin-top: 10px;
 }
 
 .pagination {
   display: flex;
+  align-items: center;
   justify-content: center;
   margin-top: 20px;
+  gap: 10px;
+}
+
+.pagination span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+bbva-button-default {
+  background-color: #1973d2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+bbva-button-default:hover {
+  background-color: #155a8a;
+  transform: scale(1.05);
+}
+
+bbva-button-default:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+bbva-form-text {
+  max-width: 80%;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+bbva-form-text label {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .modal {
@@ -129,36 +172,46 @@ export default css`
 }
 
 .evolution-card {
-  background: rgba(255, 200, 200, 0.8);
-  border-radius: 10px;
-  padding: 15px;
-  text-align: center;
-  flex: 1 1 120px;
-  max-width: 150px;
+  width: 150px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
 }
 
 .evolution-name {
   font-size: 1.2rem;
-  color: #ff6699;
-  margin-bottom: 5px;
+  font-weight: bold;
+  margin: 5px 0;
 }
 
-.evolution-image {
-  width: 80%;
-  height: auto;
-  margin: 0 auto;
-  display: block;
-  border-radius: 5px;
+.evolution-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
 }
 
 .evolution-type {
   font-size: 0.9rem;
-  color: #666;
-  margin-top: 5px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #1976d2;
+  border-radius: 8px;
+  padding: 5px 10px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
 .modal-close-button {
-  background-color: #ff6699;
+  background-color: #1973b8;
   color: white;
   border: none;
   border-radius: 5px;
@@ -170,11 +223,7 @@ export default css`
 }
 
 .modal-close-button:hover {
-  background-color: #ff3385;
-}
-
-bbva-button-default {
-  margin-top: auto;
+  background-color: #1973b8;
 }
 
 @media (max-width: 768px) {
