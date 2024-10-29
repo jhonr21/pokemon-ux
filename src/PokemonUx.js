@@ -65,7 +65,7 @@ export class PokemonUx extends LitElement {
 
   updateSearchTerm(e) {
     this.searchTerm = e.target.value;
-    this.currentPage = 1; // Reinicia a la primera página al buscar
+    this.currentPage = 1;
   }
 
   async handlePokemonClick(pokemon) {
@@ -75,7 +75,7 @@ export class PokemonUx extends LitElement {
 
     if (pokemonDm) {
       const evolutionDataHandler = (e) => {
-        this.selectedPokemon.evolutionChain = e.detail.evolutions; // Asigna evoluciones
+        this.selectedPokemon.evolutionChain = e.detail.evolutions; 
         this.showModal = true;
         document.body.classList.add('modal-open');
       };

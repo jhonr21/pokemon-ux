@@ -2,6 +2,7 @@ import { css, unsafeCSS } from 'lit-element';
 import * as foundations from '@bbva-web-components/bbva-foundations-styles';
 
 export default css`
+@charset "UTF-8";
 :host {
   display: block;
   font-family: "Arial", sans-serif;
@@ -12,9 +13,10 @@ export default css`
 }
 
 .pokemon-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 30px;
+  justify-items: center;
 }
 
 .titulo-principal {
@@ -35,7 +37,6 @@ export default css`
   background: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin: 10px;
   padding: 15px;
   text-align: center;
   width: 150px;
@@ -258,6 +259,21 @@ bbva-form-text label {
   .modal-close-button {
     padding: 8px 16px;
     font-size: 0.8rem;
+  }
+}
+@media (max-width: 1024px) {
+  .pokemon-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas medianas */
+  }
+}
+@media (max-width: 768px) {
+  .pokemon-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
+  }
+}
+@media (max-width: 480px) {
+  .pokemon-container {
+    grid-template-columns: 1fr; /* 1 columna en pantallas muy pequeñas */
   }
 }
 `;
