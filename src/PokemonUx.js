@@ -72,6 +72,7 @@ export class PokemonUx extends LitElement {
     this.selectedPokemon = pokemon;
     const pokemonDm = this.shadowRoot.querySelector('pokemon-dm');
 
+
     if (pokemonDm) {
       const evolutionDataHandler = (e) => {
         this.selectedPokemon.evolutionChain = e.detail.evolutions; // Asigna evoluciones
@@ -157,4 +158,4 @@ export class PokemonUx extends LitElement {
   }
 }
 
-customElements.define('pokemon-ux', PokemonUx);
+
