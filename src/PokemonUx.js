@@ -72,18 +72,14 @@ export class PokemonUx extends LitElement {
     this.selectedPokemon = pokemon;
     const pokemonDm = this.shadowRoot.querySelector('pokemon-dm');
 
-
     if (pokemonDm) {
-      const evolutionDataHandler = (e) => {
-        this.selectedPokemon.evolutionChain = e.detail.evolutions; 
+      pokemonDm.addEventListener('evolution-data', (e) => {
+        this.selectedPokemon.evolutionChain = e.detail.evolutions;
         this.showModal = true;
         document.body.classList.add('modal-open');
-      };
+      }, { once: true }); // Escucha el evento una sola vez para evitar duplicaciones
 
-      pokemonDm.removeEventListener('evolution-data', evolutionDataHandler);
-      pokemonDm.addEventListener('evolution-data', evolutionDataHandler);
-
-      this.selectedPokemon.evolutionChain = await pokemonDm.fetchEvolutionChain(pokemon.evolutionChainUrl);
+      await pokemonDm.fetchEvolutionChain(pokemon.evolutionChainUrl, pokemon.name); // Excluir el Pokémon seleccionado
     }
   }
 
@@ -123,15 +119,15 @@ export class PokemonUx extends LitElement {
         `)}
       </div>
 
-<div class="pagination">
-  <bbva-button-default @click="${() => this.changePage(-1)}" ?disabled="${this.currentPage === 1}">
-    Previous
-  </bbva-button-default>
-  <span>Page ${this.currentPage} of ${this.totalPages}</span>
-  <bbva-button-default @click="${() => this.changePage(1)}" ?disabled="${this.currentPage === this.totalPages}">
-    Next
-  </bbva-button-default>
-</div>
+      <div class="pagination">
+        <bbva-button-default @click="${() => this.changePage(-1)}" ?disabled="${this.currentPage === 1}">
+          Previous
+        </bbva-button-default>
+        <span>Page ${this.currentPage} of ${this.totalPages}</span>
+        <bbva-button-default @click="${() => this.changePage(1)}" ?disabled="${this.currentPage === this.totalPages}">
+          Next
+        </bbva-button-default>
+      </div>
 
       ${this.showModal ? html`
         <div class="modal">
@@ -157,5 +153,3 @@ export class PokemonUx extends LitElement {
     `;
   }
 }
-
-
