@@ -95,7 +95,7 @@ export class PokemonUx extends LitElement {
 
   render() {
     return html`
-      <h1 class="titulo-principal">Bienvenido a nuestra app de Pokémon</h1>
+      
       <h2 class="titulo-secundario">Selecciona el Pokémon de tu preferencia y observa sus evoluciones</h2>
 
       <bbva-form-text
