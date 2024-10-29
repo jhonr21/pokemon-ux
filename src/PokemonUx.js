@@ -77,9 +77,9 @@ export class PokemonUx extends LitElement {
         this.selectedPokemon.evolutionChain = e.detail.evolutions;
         this.showModal = true;
         document.body.classList.add('modal-open');
-      }, { once: true }); // Escucha el evento una sola vez para evitar duplicaciones
+      }, { once: true });
 
-      await pokemonDm.fetchEvolutionChain(pokemon.evolutionChainUrl, pokemon.name); // Excluir el Pokémon seleccionado
+      await pokemonDm.fetchEvolutionChain(pokemon.evolutionChainUrl, pokemon.name); 
     }
   }
 
